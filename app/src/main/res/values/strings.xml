@@ -4,4 +4,8 @@
     <string name="save">Save</string>
     <string name="retrieve_value_from_shared_preferences">Retrieve Value From Shared Preferences</string>
     <string name="load">Load</string>
+    <string name="add_person_to_list">ADD PERSON TO LIST</string>
+    <string name="ssn">SSN</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
 </resources>
