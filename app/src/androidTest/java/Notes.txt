@@ -24,5 +24,72 @@
             - apply   - happens asynchronously and doesn't have a return
 
 
-       *) val editor = getSharedPreferences("shared_pref", Context.MODE_PRIVATE) // Keeps this sharedPref Private and not shared between other applications
+       *) val editor = getSharedPreferences("shared_pref", Context.MODE_PRIVATE) // Keeps this
+        sharedPref Private and not shared between other applications
+
+
+ ***********************
+
+    - Relational Databases (Grouping of data by their relations)
+        - Relation Databases have:
+            - Tables
+            - columns
+            - entries (entities)
+            - foreign keys
+            - primary keys
+
+        - Generally (99% of the time) uses SQL as the defined structured language to interact
+         with the database.
+
+        CRUD operations and SQL
+            C - CREATE    - Creating tables
+            R - READ      - Getting data from Tables
+            U - UPDATE    - Changing state of tables or entries
+            D - DELETE    - Removal of entries
+
+
+
+        Create)                         (PRIMARY KEY must be unique)
+                 CREATE TABLE PERSON{
+                      FirstName String,
+                      LastName String PRIMARY KEY
+                 }
+
+
+        Read)
+                SELECT * FROM PERSON     -  Get all entries and column values
+                SELECT firstNAme FROM PERSON - Get all entries but onyly the firstNAme
+                SELECT * FROM PERSON WHERE lastNAme = 'Hostkins' - Get ONLY entries with the last name Hoskins
+
+        UPDATE)   - Changing state of tables or entries
+
+
+        (Android has a method to handle update and delete for us)
+
+************************
+
+    - SQLite         ( Max size 140 terabytes)
+
+      -SQLite is a very simplified
+       Database Recourse Manager DBRM - (program that controls the database)
+        - file per app
+      -SQLite and Android practices
+         -Generally broken into 2 separate parts
+            -Database Contract
+                -Query Strings
+                -Column Names
+                - Table Names
+                - Database Name
+                - etc
+            - Database Helper
+                - The database helper extends from the SQLiteOpenHelper
+                - MUST override 2 methods
+                    - onCreate
+                        - Creates the tables
+                        - only runs once unless invoked elsewhere
+                    - onUpgrade
+                        - Handles the updating of the database when the version of the database is changed
+                        - Called when the current database version is not equal to current configuration
+
+
 

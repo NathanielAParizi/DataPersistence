@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
-const val STRING_KEY = "string_key"
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,10 +17,9 @@ class MainActivity : AppCompatActivity() {
 
     fun saveValueToSharedPref(valueToSave: String) {
 
-        val sharedPref = getSharedPreferences(
-            "shared_pref",
-            Context.MODE_PRIVATE
-        ) // Keeps this sharedPref Private and not shared between other applications
+        // Keeps this sharedPref Private and not shared between other applications
+
+        val sharedPref = getSharedPreferences("shared_pref", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
         editor.putString(STRING_KEY, valueToSave)
         editor.apply()
