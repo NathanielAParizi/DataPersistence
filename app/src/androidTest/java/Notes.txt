@@ -83,6 +83,7 @@
                 - etc
             - Database Helper
                 - The database helper extends from the SQLiteOpenHelper
+
                 - MUST override 2 methods
                     - onCreate
                         - Creates the tables
@@ -90,6 +91,13 @@
                     - onUpgrade
                         - Handles the updating of the database when the version of the database is changed
                         - Called when the current database version is not equal to current configuration
-
+                    - Inserting and updating
+                        - USes ContentValues which is a data container with key/ value association
+                            - KEY = Col (Or Field)
+                            - Value = value for that field
+                    - Retrieving enteries from Database
+                        - Cursor
+                            - Iterable data container
+                            - that holds all records retrieved from database query
 
 
