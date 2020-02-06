@@ -1,0 +1,28 @@
+**** Data Persistence *****
+
+    Non-volatile memory is a memory that can be stored after device has been power cycled
+
+    - Saving data to non volatile memory
+    - Data is retained after application is closed
+
+    4 Types of Data Persistence
+        - Shared Preferences
+        - Internal File Storage
+        - External File Storage
+        - Relational Database (SQLite)
+
+
+    - Shared Preferences
+      - Used typically for non-secure data
+      - Shared Prefs is a file kept alongside the application APK
+      - Shared Prefs uses key:value pairs
+      - Only primitive types
+      - Strings are allowed
+      - To save data to shared preferences. you must go through the shraed preferences editor
+        - Once the value is set in the editor you must either:
+            - commit  - happens immediately and returns a boolean if the commit occured
+            - apply   - happens asynchronously and doesn't have a return
+
+
+       *) val editor = getSharedPreferences("shared_pref", Context.MODE_PRIVATE) // Keeps this sharedPref Private and not shared between other applications
+

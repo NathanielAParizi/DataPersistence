@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DataPersistence</string>
+    <string name="dispaly">dispaly</string>
+    <string name="save">Save</string>
+    <string name="retrieve_value_from_shared_preferences">Retrieve Value From Shared Preferences</string>
+    <string name="load">Load</string>
+</resources>
