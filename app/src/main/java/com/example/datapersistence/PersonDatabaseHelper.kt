@@ -93,7 +93,6 @@ class PersonDatabaseHelper(context: Context) :
         database.close()
         return personList
 
-
     }
 
     fun updatePersonInDatabase(person: Person) {

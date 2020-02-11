@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.BufferedReader
+import java.io.FileOutputStream
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
 
 
 class MainActivity : AppCompatActivity() {
@@ -52,7 +56,47 @@ class MainActivity : AppCompatActivity() {
                 saveValueToSharedPref(etSharedPrefs.text.toString())
             }
 
+            R.id.saveInternal -> {
+
+                saveStringToInternalFile("cool")
+
+
+
+            }
+
+            R.id.loadInternal -> {
+
+
+                txtInternal.text = readStringFromInteralFile()
+
+            }
+
         }
+    }
+
+    fun saveStringToInternalFile(valueToSave: String) {
+        val fileOutputStream = openFileOutput("example.txt", Context.MODE_PRIVATE)
+        val outputStream = OutputStreamWriter(fileOutputStream)
+        outputStream.write(valueToSave)
+    }
+
+    fun readStringFromInteralFile(): String {
+        val fileInputStream = openFileInput("example.txt")
+        val inputStreamReader = InputStreamReader(fileInputStream)
+
+        var inputBuffer = BufferedReader(inputStreamReader)
+        var sb = StringBuilder()
+        var currentRead: String? = null
+
+        while ({ currentRead = inputBuffer.readLine(); currentRead }() != null) {
+            sb.append(currentRead)
+
+
+        }
+
+        inputStreamReader.close()
+        return sb.toString()
+
     }
 
 }

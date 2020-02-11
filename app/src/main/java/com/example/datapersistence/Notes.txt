@@ -1,4 +1,5 @@
-**** Data Persistence *****
+******** Data Persistence **********
+
 
     Non-volatile memory is a memory that can be stored after device has been power cycled
 
@@ -10,7 +11,6 @@
         - Internal File Storage
         - External File Storage
         - Relational Database (SQLite)
-
 
     - Shared Preferences
       - Used typically for non-secure data
@@ -27,8 +27,7 @@
        *) val editor = getSharedPreferences("shared_pref", Context.MODE_PRIVATE) // Keeps this
         sharedPref Private and not shared between other applications
 
-
- ***********************
+ **************************
 
     - Relational Databases (Grouping of data by their relations)
         - Relation Databases have:
@@ -66,18 +65,18 @@
 
         (Android has a method to handle update and delete for us)
 
-************************
+*****************************************************************  SQLite **************
 
     - SQLite         ( Max size 140 terabytes)
 
       -SQLite is a very simplified
-       Database Recourse Manager DBRM - (program that controls the database)
+       Database Resource Manager DBRM - (program that controls the database)
         - file per app
       -SQLite and Android practices
          -Generally broken into 2 separate parts
             -Database Contract
-                -Query Strings
-                -Column Names
+                - Query Strings
+                - Column Names
                 - Table Names
                 - Database Name
                 - etc
@@ -101,3 +100,30 @@
                             - that holds all records retrieved from database query
 
 
+
+***********************************************************  INTERNAL / EXTERNAL STORAGE ********
+
+    File Storage
+        - WRITE to a file (2 objects)
+            - FileOutputStream
+                - Access to the file
+                - Parameters are:
+                    - File Name
+                    - Write Mode (PRIVATE)
+                - OutputStreamWriter
+                    - Writes the value to the opened file
+                    - parameter
+                        - value to write
+
+        - READ from a file  (2 objects)
+            - File InputStream
+            - InputStreamReader
+            - Input Buffer
+            - char to read current value in buffer
+            - int to read current value in buffer
+            - loop to cycle through the buffer
+
+         -External File Storage
+            - Requires permissions to read and/or write to External Storage
+            - Check if extneral file stoage is avialbel
+            - To get the external file storage location. use the getExternalFileDir("<<FILE_NAME>>")

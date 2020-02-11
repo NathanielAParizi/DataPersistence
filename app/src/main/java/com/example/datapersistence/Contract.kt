@@ -12,12 +12,12 @@ const val COLUMN_FIRSTNAME = "first_name"
 const val COLUMN_LASTNAME = "last_name"
 const val COLUMN_SSN = "ssn"
 
-const val CREATE_PERSON_TABLE = "{" +
-        " CREATE TABLE $TABLE_NAME + {" +
+const val CREATE_PERSON_TABLE =
+        " CREATE TABLE $TABLE_NAME (" +
         "$COLUMN_FIRSTNAME String," +
         "$COLUMN_LASTNAME String," +
         "$COLUMN_SSN String PRIMARY_KEY" +
-        "}"
+        " )"
 
 
 
